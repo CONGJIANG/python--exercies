@@ -1,0 +1,14 @@
+
+import numpy as np   # import numpy
+def CompMatrix(M1, M2):
+    ncol = M1.shape[1]
+    nr1 = M1.shape[0]
+    nr2 = M2.shape[0]
+    matrix = np.zeros((ncol, nr1*nr2))
+
+    for i in range(nr1):
+        for j in range(nr2):
+            for k in range(ncol):
+                if M1[i,k] == M2[j,k]:
+                    matrix[k, j+i*nr2] =1
+    return matrix
